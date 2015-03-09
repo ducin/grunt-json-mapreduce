@@ -2,6 +2,12 @@
 
 Grunt task performing custom functions on JSON files
 
+<p/>
+<img src="https://nodei.co/npm/grunt-json-mapreduce.png?downloads=true&stars=true" alt=""/>
+
+<p/>
+<img src="https://david-dm.org/tkoomzaaskz/grunt-json-mapreduce.png" alt=""/>
+
 ## usage
 
 The most important thing to define in this plugin is map and reduce functions
