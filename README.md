@@ -21,6 +21,7 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 
 ```js
 grunt.loadNpmTasks('grunt-json-mapreduce');
+```
 
 ## usage
 
@@ -37,7 +38,7 @@ unchanged (map function doesn't alter anything). The reduce function merges
 elements of all arrays. And that's it.
 
     grunt.initConfig({
-        'json-mapreduce': {
+        json_mapreduce: {
             target: {
                 src: ['path/to/files/**/*.json'],
                 dest: 'path/to/dest/file.json',
@@ -66,7 +67,7 @@ Additionally, there is debug function defined that displays pre-map array length
 
     var idAutoIncrement = 0;
     grunt.initConfig({
-        'json-mapreduce': {
+        json_mapreduce: {
             target: {
                 src: ['path/to/files/**/*.json'],
                 dest: 'path/to/dest/file.json',

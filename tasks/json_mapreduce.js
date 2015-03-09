@@ -13,7 +13,7 @@
 var path = require('path');
 
 module.exports = function (grunt) {
-    grunt.registerMultiTask('json-mapreduce', 'Performs custom functions on JSON files', function () {
+    grunt.registerMultiTask('json_mapreduce', 'Performs custom functions on JSON files', function () {
         var options = this.options();
         this.files.forEach(function (f) {
             var cwd = path.normalize(f.orig.cwd || ''),
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                     grunt.log.warn('Source file "' + file + '" not found.');
                     return false;
                 } else {
-                    grunt.log.oklns('Reading file ' + file + '.');
+                    grunt.log.ok('Reading file ' + file + '.');
                     return true;
                 }
             }).map(function(file){
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                 return content;
             }).map(options.map).reduce(options.reduce);
             var destination = path.normalize(f.orig.dest);
-            grunt.log.oklns('Writing file ' + destination + '.');
+            grunt.log.ok('Writing file ' + destination + '.');
             grunt.file.write(destination, JSON.stringify(result));
         });
     });
