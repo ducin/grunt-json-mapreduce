@@ -1,0 +1,26 @@
+{
+  "name": "grunt-json-mapreduce",
+  "version": "0.1.0",
+  "description": "Grunt task performing custom functions on JSON files",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkoomzaaskz/grunt-json-mapreduce.git"
+  },
+  "keywords": [
+    "gruntplugin",
+    "json",
+    "file"
+  ],
+  "author": "Tomasz Ducin <tomasz.ducin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tkoomzaaskz/grunt-json-mapreduce/issues"
+  },
+  "homepage": "https://github.com/tkoomzaaskz/grunt-json-mapreduce",
+  "peerDependencies": {
+    "grunt": ">=0.4.0"
+  },
+  "files": [
+    "tasks"
+  ]
+}
