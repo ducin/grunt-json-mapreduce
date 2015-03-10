@@ -1,0 +1,61 @@
+# basic example
+
+Reads all JSON files that are assumed to contain arrays. The original data is
+unchanged (map function doesn't alter anything). The reduce function merges
+elements of all arrays. And that's it.
+
+    grunt.initConfig({
+        json_mapreduce: {
+            target: {
+                src: ['path/to/files/**/*.json'],
+                dest: 'path/to/dest/file.json',
+                options: {
+                    map: function (currentValue, index, array) {
+                        return currentValue;
+                    },
+                    reduce: function (previousValue, currentValue, index, array) {
+                        if (typeof previousValue === "undefined") {
+                            return currentValue;
+                        } else {
+                            return previousValue.concat(currentValue);
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+# slightly advanced example
+
+This example also assumes JSON files to contain arrays of elements. There is an
+`idAutoIncrement` variable outside the scope that will hold the current next
+value of the id. So each element of each array will be modified inside map.
+Additionally, there is debug function defined that displays pre-map array length.
+
+    var idAutoIncrement = 0;
+    grunt.initConfig({
+        json_mapreduce: {
+            target: {
+                src: ['path/to/files/**/*.json'],
+                dest: 'path/to/dest/file.json',
+                options: {
+                    map: function (currentValue, index, array) {
+                        return currentValue.map(function (element) {
+                            element.id = ++idAutoIncrement;
+                            return element;
+                        });
+                    },
+                    reduce: function (previousValue, currentValue, index, array) {
+                        if (typeof previousValue === "undefined") {
+                            return currentValue;
+                        } else {
+                            return previousValue.concat(currentValue);
+                        }
+                    },
+                    debug: function (value) {
+                        grunt.log.oklns("Elements: " + value.length);
+                    }
+                }
+            }
+        }
+    });

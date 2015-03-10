@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                 // map: function (currentValue, index, array)
                 map: function (currentValue) {
                     return currentValue.map(function(el){
-                        return el.firstname + " " + el.lastname;
+                        return { "name": el.firstname + " " + el.lastname };
                     });
                 },
                 // reduce: function (previousValue, currentValue, index, array)
@@ -82,8 +82,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-internal');
 
-  // Whenever the 'test' task is run, first clean the placeholder,
+  // Whenever the 'test' task is run, first run jshint, clean the placeholder,
   // then run this plugin's task(s), then test the result.
   grunt.registerTask('test', ['jshint', 'clean', 'json_mapreduce', 'nodeunit']);
 

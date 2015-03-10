@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * grunt-json-mapreduce is a Grunt plugin for performing custom functions on JSON files
  *
@@ -10,10 +8,12 @@
  * @license MIT https://raw.github.com/tkoomzaaskz/grunt-json-mapreduce/blob/master/LICENSE
  */
 
-var path = require('path');
+'use strict';
+
 
 module.exports = function (grunt) {
-    grunt.registerMultiTask('json_mapreduce', 'Performs custom functions on JSON files', function () {
+    var path = require('path');
+    grunt.registerMultiTask('json_mapreduce', 'Performs MapReduce algorithm on JSON files using custom functions.', function () {
         var options = this.options();
         this.files.forEach(function (f) {
             var cwd = path.normalize(f.orig.cwd || ''),

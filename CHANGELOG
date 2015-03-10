@@ -1,0 +1,11 @@
+v0.1.1:
+  date: 2015-03-10
+  changes:
+    - Improved docs.
+    - Automatic tests added.
+    - Grunt-contrib-internal standard used to build.
+v0.1.0:
+  date: 2015-03-08
+  changes:
+    - Fully working mapreduce algorithm.
+    - First official release.
