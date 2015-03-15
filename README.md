@@ -1,4 +1,4 @@
-# grunt-json-mapreduce v0.1.1 [![Build Status: Linux](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce)
+# grunt-json-mapreduce v0.1.2 [![Build Status: Linux](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce)
 
 > Grunt task performing custom functions on JSON files
 
@@ -27,11 +27,9 @@ _Run this task with the `grunt json-mapreduce` command._
 
 Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
-<p/>
-<img src="https://nodei.co/npm/grunt-json-mapreduce.png?downloads=true&stars=true" alt=""/>
+[![grunt-json-mapreduce npm module](https://nodei.co/npm/grunt-json-mapreduce.png?downloads=true&stars=true "grunt-json-mapreduce npm module")](https://www.npmjs.com/package/grunt-json-mapreduce)
 
-<p/>
-<img src="https://david-dm.org/tkoomzaaskz/grunt-json-mapreduce.png" alt=""/>
+![grunt-json-mapreduce dependency status](https://david-dm.org/tkoomzaaskz/grunt-json-mapreduce.png "grunt-json-mapreduce dependency status")
 
 Provide the `map` and `reduce` options as functions that will be applied to all
 JSON files, according to [http://en.wikipedia.org/wiki/MapReduce](MapReduce algorithm).
@@ -43,7 +41,6 @@ merged into the final result.
 
 #### map
 Type: `function`
-Default: `function (el){ return el; }`
 Required
 
 Each input JSON file content will be processed by `map` function. It has to conform to
@@ -110,7 +107,14 @@ Optional
 The debug function, used only in development phase. It is used to output
 additional information about JSON input files to the console.
 
-### basic example
+### Usage Examples
+
+If you want to leave input JSON files unmodified before reduce phase, use
+following map function:
+
+    function (el){ return el; }
+
+#### basic example
 
 Reads all JSON files that are assumed to contain arrays. The original data is
 unchanged (map function doesn't alter anything). The reduce function merges
@@ -137,7 +141,7 @@ elements of all arrays. And that's it.
         }
     });
 
-### slightly advanced example
+#### slightly advanced example
 
 This example also assumes JSON files to contain arrays of elements. There is an
 `idAutoIncrement` variable outside the scope that will hold the current next
@@ -174,10 +178,12 @@ Additionally, there is debug function defined that displays pre-map array length
 
 ## Release History
 
- * 2015-03-09   v0.1.0   fully working mapreduce algorithm first official release
+ * 2015-03-13   v0.1.2   Unified docs.
+ * 2015-03-10   v0.1.1   Improved docs. Automatic tests added. Grunt-contrib-internal standard used to build.
+ * 2015-03-08   v0.1.0   Fully working mapreduce algorithm. First official release.
 
 ---
 
 Task submitted by [Tomasz Ducin](http://ducin.it)
 
-*This file was generated on Tue Mar 10 2015 12:26:49.*
+*This file was generated on Sun Mar 15 2015 13:04:04.*

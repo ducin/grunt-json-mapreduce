@@ -1,4 +1,11 @@
-# basic example
+# Usage Examples
+
+If you want to leave input JSON files unmodified before reduce phase, use
+following map function:
+
+    function (el){ return el; }
+
+## basic example
 
 Reads all JSON files that are assumed to contain arrays. The original data is
 unchanged (map function doesn't alter anything). The reduce function merges
@@ -25,7 +32,7 @@ elements of all arrays. And that's it.
         }
     });
 
-# slightly advanced example
+## slightly advanced example
 
 This example also assumes JSON files to contain arrays of elements. There is an
 `idAutoIncrement` variable outside the scope that will hold the current next

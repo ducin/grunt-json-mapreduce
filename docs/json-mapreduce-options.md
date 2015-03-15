@@ -2,7 +2,6 @@
 
 ## map
 Type: `function`
-Default: `function (el){ return el; }`
 Required
 
 Each input JSON file content will be processed by `map` function. It has to conform to
