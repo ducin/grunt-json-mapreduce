@@ -13,8 +13,12 @@
 
 module.exports = function (grunt) {
     var path = require('path');
+    var examples = require('../examples');
     grunt.registerMultiTask('json_mapreduce', 'Performs MapReduce algorithm on JSON files using custom functions.', function () {
         var options = this.options();
+        if (!options.map) {
+            options.map = examples.map.pass;
+        }
         this.files.forEach(function (f) {
             var cwd = path.normalize(f.orig.cwd || ''),
                 cwdAbs = path.resolve(cwd || '.'),
@@ -33,12 +37,12 @@ module.exports = function (grunt) {
             }).map(function(file){
                 var content = grunt.file.readJSON(file);
                 if (options.debug) {
-                    options.debug(content);
+                    options.debug(grunt, content);
                 }
                 return content;
             }).map(options.map).reduce(options.reduce);
             var destination = path.normalize(f.orig.dest);
-            grunt.log.ok('Writing file ' + destination + '.');
+            grunt.log.ok('Writing file ' + destination + '.\n');
             grunt.file.write(destination, JSON.stringify(result));
         });
     });

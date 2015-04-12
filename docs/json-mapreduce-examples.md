@@ -32,6 +32,44 @@ elements of all arrays. And that's it.
         }
     });
 
+This grunt task comes bundled with example functions you may re-use. Simply,
+require the `examples` module in your Gruntfile:
+
+    var examples = require('./node_modules/grunt-json-mapreduce/examples');
+
+and re-use the functions, according to the file structure:
+
+    grunt.initConfig({
+        json_mapreduce: {
+            target: {
+                src: ['path/to/files/**/*.json'],
+                dest: 'path/to/dest/file.json',
+                options: {
+                    map: examples.map.pass,
+                    reduce: examples.reduce.concat,
+                    debug: examples.debug.log
+                }
+            }
+        }
+    });
+
+You may also use the default `map` function, `examples.map.pass`, which doesn't
+alter an element value:
+
+    var examples = require('./node_modules/grunt-json-mapreduce/examples');
+    grunt.initConfig({
+        json_mapreduce: {
+            target: {
+                src: ['path/to/files/**/*.json'],
+                dest: 'path/to/dest/file.json',
+                options: {
+                    reduce: examples.reduce.concat,
+                    debug: examples.debug.log
+                }
+            }
+        }
+    });
+
 ## slightly advanced example
 
 This example also assumes JSON files to contain arrays of elements. There is an
@@ -59,7 +97,7 @@ Additionally, there is debug function defined that displays pre-map array length
                             return previousValue.concat(currentValue);
                         }
                     },
-                    debug: function (value) {
+                    debug: function (grunt, value) {
                         grunt.log.oklns("Elements: " + value.length);
                     }
                 }

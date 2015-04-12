@@ -1,4 +1,4 @@
-# grunt-json-mapreduce v0.1.2 [![Build Status: Linux](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce)
+# grunt-json-mapreduce v0.1.4 [![Build Status: Linux](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce)
 
 > Grunt task performing custom functions on JSON files
 
@@ -65,7 +65,8 @@ In above example `index` and `array` function parameters are ignored. In other
 examples, however, they might be used to perform more complex _mapreduce_
 operations.
 
-By default, the `map` function doesn't change the elements.
+By default, the `map` function uses `examples.map.pass`, which doesn't change
+the elements.
 
 #### reduce
 Type: `function`
@@ -105,7 +106,16 @@ Type: `function`
 Optional
 
 The debug function, used only in development phase. It is used to output
-additional information about JSON input files to the console.
+additional information about JSON input files to the console. It accepts two
+parameters: `grunt`, the grunt environment object and `value`, the single value:
+
+    function(grunt, value)
+
+Example function might just log the value to the grunt console:
+
+    function (grunt, value) {
+        grunt.log.oklns("Value:" + value);
+    }
 
 ### Usage Examples
 
@@ -141,6 +151,44 @@ elements of all arrays. And that's it.
         }
     });
 
+This grunt task comes bundled with example functions you may re-use. Simply,
+require the `examples` module in your Gruntfile:
+
+    var examples = require('./node_modules/grunt-json-mapreduce/examples');
+
+and re-use the functions, according to the file structure:
+
+    grunt.initConfig({
+        json_mapreduce: {
+            target: {
+                src: ['path/to/files/**/*.json'],
+                dest: 'path/to/dest/file.json',
+                options: {
+                    map: examples.map.pass,
+                    reduce: examples.reduce.concat,
+                    debug: examples.debug.log
+                }
+            }
+        }
+    });
+
+You may also use the default `map` function, `examples.map.pass`, which doesn't
+alter an element value:
+
+    var examples = require('./node_modules/grunt-json-mapreduce/examples');
+    grunt.initConfig({
+        json_mapreduce: {
+            target: {
+                src: ['path/to/files/**/*.json'],
+                dest: 'path/to/dest/file.json',
+                options: {
+                    reduce: examples.reduce.concat,
+                    debug: examples.debug.log
+                }
+            }
+        }
+    });
+
 #### slightly advanced example
 
 This example also assumes JSON files to contain arrays of elements. There is an
@@ -168,7 +216,7 @@ Additionally, there is debug function defined that displays pre-map array length
                             return previousValue.concat(currentValue);
                         }
                     },
-                    debug: function (value) {
+                    debug: function (grunt, value) {
                         grunt.log.oklns("Elements: " + value.length);
                     }
                 }
@@ -178,6 +226,8 @@ Additionally, there is debug function defined that displays pre-map array length
 
 ## Release History
 
+ * 2015-04-12   v0.1.4   Example functions documentation.
+ * 2015-04-12   v0.1.3   Better console output. Example functions bundled with grunt task.
  * 2015-03-13   v0.1.2   Unified docs.
  * 2015-03-10   v0.1.1   Improved docs. Automatic tests added. Grunt-contrib-internal standard used to build.
  * 2015-03-08   v0.1.0   Fully working mapreduce algorithm. First official release.
@@ -186,4 +236,4 @@ Additionally, there is debug function defined that displays pre-map array length
 
 Task submitted by [Tomasz Ducin](http://ducin.it)
 
-*This file was generated on Sun Mar 15 2015 13:04:04.*
+*This file was generated on Sun Apr 12 2015 19:33:05.*

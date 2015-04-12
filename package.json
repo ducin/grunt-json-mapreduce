@@ -1,7 +1,7 @@
 {
   "name": "grunt-json-mapreduce",
   "description": "Grunt task performing custom functions on JSON files",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "author": "Tomasz Ducin <tomasz.ducin@gmail.com>",
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "file"
   ],
   "files": [
-    "tasks"
+    "tasks",
+    "examples.js"
   ]
 }

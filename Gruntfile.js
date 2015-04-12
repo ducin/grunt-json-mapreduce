@@ -10,6 +10,8 @@
 
 module.exports = function(grunt) {
 
+  var examples = require('./examples');
+
   // Project configuration.
   grunt.initConfig({
     jshint: {
@@ -33,17 +35,11 @@ module.exports = function(grunt) {
             dest: 'tmp/arrays.json',
             options: {
                 // map: function (currentValue, index, array)
-                map: function (currentValue) {
-                    return currentValue;
-                },
+                // let map be the default (examples.map.pass)
                 // reduce: function (previousValue, currentValue, index, array)
-                reduce: function (previousValue, currentValue) {
-                    if (typeof previousValue === "undefined") {
-                        return currentValue;
-                    } else {
-                        return previousValue.concat(currentValue);
-                    }
-                }
+                reduce: examples.reduce.concat,
+                // debug: function (grunt, value)
+                debug: examples.debug.log
             }
         },
         objects: {

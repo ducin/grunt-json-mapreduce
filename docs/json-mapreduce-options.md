@@ -26,7 +26,8 @@ In above example `index` and `array` function parameters are ignored. In other
 examples, however, they might be used to perform more complex _mapreduce_
 operations.
 
-By default, the `map` function doesn't change the elements.
+By default, the `map` function uses `examples.map.pass`, which doesn't change
+the elements.
 
 ## reduce
 Type: `function`
@@ -66,4 +67,13 @@ Type: `function`
 Optional
 
 The debug function, used only in development phase. It is used to output
-additional information about JSON input files to the console.
+additional information about JSON input files to the console. It accepts two
+parameters: `grunt`, the grunt environment object and `value`, the single value:
+
+    function(grunt, value)
+
+Example function might just log the value to the grunt console:
+
+    function (grunt, value) {
+        grunt.log.oklns("Value:" + value);
+    }
