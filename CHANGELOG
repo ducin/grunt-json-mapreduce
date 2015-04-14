@@ -1,3 +1,7 @@
+v0.1.5:
+  date: 2015-04-14
+  changes:
+    - file available in debug function
 v0.1.4:
   date: 2015-04-12
   changes:

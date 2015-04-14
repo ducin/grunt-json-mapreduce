@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             }).map(function(file){
                 var content = grunt.file.readJSON(file);
                 if (options.debug) {
-                    options.debug(grunt, content);
+                    options.debug(grunt, file, content);
                 }
                 return content;
             }).map(options.map).reduce(options.reduce);

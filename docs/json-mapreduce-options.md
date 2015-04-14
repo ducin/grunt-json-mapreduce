@@ -67,13 +67,18 @@ Type: `function`
 Optional
 
 The debug function, used only in development phase. It is used to output
-additional information about JSON input files to the console. It accepts two
-parameters: `grunt`, the grunt environment object and `value`, the single value:
+additional information about JSON input files to the console. It accepts three
+parameters:
+ * `grunt`, the grunt environment object
+ * `file`, absolute path to the file being processed
+ * `value`, the single value:
 
-    function(grunt, value)
+The function header is:
+
+    function(grunt, file, value)
 
 Example function might just log the value to the grunt console:
 
-    function (grunt, value) {
-        grunt.log.oklns("Value:" + value);
+    function (grunt, file, value) {
+        grunt.log.ok("Value in " + file + ":" + value);
     }

@@ -1,4 +1,4 @@
-# grunt-json-mapreduce v0.1.4 [![Build Status: Linux](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce)
+# grunt-json-mapreduce v0.1.5 [![Build Status: Linux](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce)
 
 > Grunt task performing custom functions on JSON files
 
@@ -107,15 +107,20 @@ Type: `function`
 Optional
 
 The debug function, used only in development phase. It is used to output
-additional information about JSON input files to the console. It accepts two
-parameters: `grunt`, the grunt environment object and `value`, the single value:
+additional information about JSON input files to the console. It accepts three
+parameters:
+ * `grunt`, the grunt environment object
+ * `file`, absolute path to the file being processed
+ * `value`, the single value:
 
-    function(grunt, value)
+The function header is:
+
+    function(grunt, file, value)
 
 Example function might just log the value to the grunt console:
 
-    function (grunt, value) {
-        grunt.log.oklns("Value:" + value);
+    function (grunt, file, value) {
+        grunt.log.ok("Value in " + file + ":" + value);
     }
 
 ### Usage Examples
@@ -217,8 +222,8 @@ Additionally, there is debug function defined that displays pre-map array length
                             return previousValue.concat(currentValue);
                         }
                     },
-                    debug: function (grunt, value) {
-                        grunt.log.oklns("Elements: " + value.length);
+                    debug: function (grunt, file, value) {
+                        grunt.log.oklns("Elements in " + file + ": " + value.length);
                     }
                 }
             }
@@ -227,6 +232,7 @@ Additionally, there is debug function defined that displays pre-map array length
 
 ## Release History
 
+ * 2015-04-14   v0.1.5   file available in debug function
  * 2015-04-12   v0.1.4   Example functions documentation.
  * 2015-04-12   v0.1.3   Better console output. Example functions bundled with grunt task.
  * 2015-03-13   v0.1.2   Unified docs.
@@ -237,4 +243,4 @@ Additionally, there is debug function defined that displays pre-map array length
 
 Task submitted by [Tomasz Ducin](http://ducin.it)
 
-*This file was generated on Sun Apr 12 2015 23:20:56.*
+*This file was generated on Tue Apr 14 2015 09:44:23.*

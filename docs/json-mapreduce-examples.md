@@ -97,8 +97,8 @@ Additionally, there is debug function defined that displays pre-map array length
                             return previousValue.concat(currentValue);
                         }
                     },
-                    debug: function (grunt, value) {
-                        grunt.log.oklns("Elements: " + value.length);
+                    debug: function (grunt, file, value) {
+                        grunt.log.oklns("Elements in " + file + ": " + value.length);
                     }
                 }
             }

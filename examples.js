@@ -33,10 +33,10 @@ module.exports = {
         }
     },
     debug: {
-        log: function (grunt, value) {
+        log: function (grunt, file, value) {
             grunt.log.oklns("Value:" + value);
         },
-        logStringify: function (grunt, value) {
+        logStringify: function (grunt, file, value) {
             grunt.log.oklns("Value:" + JSON.stringify(value));
         }
     }
