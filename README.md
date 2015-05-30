@@ -38,6 +38,8 @@ In the first phase, all input (grunt `src`) JSON files contents are processed by
 function to be merged into the final result, which is stored in the `dest`
 grunt-specified file.
 
+[![Map-Reduce example](/docs/map-reduce-example.png "Map-Reduce example")](https://twitter.com/stilkov/status/516320745950306305)
+
 ### Options
 
 #### map
@@ -243,4 +245,4 @@ Additionally, there is debug function defined that displays pre-map array length
 
 Task submitted by [Tomasz Ducin](http://ducin.it)
 
-*This file was generated on Tue Apr 14 2015 09:44:23.*
+*This file was generated on Sat May 30 2015 12:49:33.*

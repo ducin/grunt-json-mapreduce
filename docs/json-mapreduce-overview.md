@@ -10,3 +10,5 @@ In the first phase, all input (grunt `src`) JSON files contents are processed by
 `map` function. In the second phase, their results are processed by `reduce`
 function to be merged into the final result, which is stored in the `dest`
 grunt-specified file.
+
+[![Map-Reduce example](/docs/map-reduce-example.png "Map-Reduce example")](https://twitter.com/stilkov/status/516320745950306305)
