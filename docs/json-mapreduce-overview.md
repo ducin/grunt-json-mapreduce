@@ -2,7 +2,8 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 [![grunt-json-mapreduce npm module](https://nodei.co/npm/grunt-json-mapreduce.png?downloads=true&stars=true "grunt-json-mapreduce npm module")](https://www.npmjs.com/package/grunt-json-mapreduce)
 
-![grunt-json-mapreduce dependency status](https://david-dm.org/tkoomzaaskz/grunt-json-mapreduce.png "grunt-json-mapreduce dependency status")
+[![Dependency Status](https://david-dm.org/ducin/grunt-json-mapreduce/status.svg)](https://david-dm.org/ducin/grunt-json-mapreduce)
+[![devDependency Status](https://david-dm.org/ducin/grunt-json-mapreduce/dev-status.svg)](https://david-dm.org/ducin/grunt-json-mapreduce#info=devDependencies)
 
 Provides the `map` and `reduce` options as functions that will be applied to all
 JSON files, according to [MapReduce algorithm](http://en.wikipedia.org/wiki/MapReduce).

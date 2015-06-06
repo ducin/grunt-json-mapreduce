@@ -1,4 +1,4 @@
-# grunt-json-mapreduce v0.1.5 [![Build Status: Linux](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/tkoomzaaskz/grunt-json-mapreduce)
+# grunt-json-mapreduce v0.1.6 [![Build Status: Linux](https://travis-ci.org/ducin/grunt-json-mapreduce.svg?branch=master)](https://travis-ci.org/ducin/grunt-json-mapreduce)
 
 > Grunt task performing custom functions on JSON files
 
@@ -29,7 +29,8 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 [![grunt-json-mapreduce npm module](https://nodei.co/npm/grunt-json-mapreduce.png?downloads=true&stars=true "grunt-json-mapreduce npm module")](https://www.npmjs.com/package/grunt-json-mapreduce)
 
-![grunt-json-mapreduce dependency status](https://david-dm.org/tkoomzaaskz/grunt-json-mapreduce.png "grunt-json-mapreduce dependency status")
+[![Dependency Status](https://david-dm.org/ducin/grunt-json-mapreduce/status.svg)](https://david-dm.org/ducin/grunt-json-mapreduce)
+[![devDependency Status](https://david-dm.org/ducin/grunt-json-mapreduce/dev-status.svg)](https://david-dm.org/ducin/grunt-json-mapreduce#info=devDependencies)
 
 Provides the `map` and `reduce` options as functions that will be applied to all
 JSON files, according to [MapReduce algorithm](http://en.wikipedia.org/wiki/MapReduce).
@@ -234,7 +235,8 @@ Additionally, there is debug function defined that displays pre-map array length
 
 ## Release History
 
- * 2015-04-14   v0.1.5   file available in debug function
+ * 2015-06-07   v0.1.6   Moving ownership (user rename) tkoomzaaskz:ducin.
+ * 2015-04-14   v0.1.5   File available in debug function.
  * 2015-04-12   v0.1.4   Example functions documentation.
  * 2015-04-12   v0.1.3   Better console output. Example functions bundled with grunt task.
  * 2015-03-13   v0.1.2   Unified docs.
@@ -245,4 +247,4 @@ Additionally, there is debug function defined that displays pre-map array length
 
 Task submitted by [Tomasz Ducin](http://ducin.it)
 
-*This file was generated on Sat May 30 2015 12:49:33.*
+*This file was generated on Sun Jun 07 2015 01:49:09.*

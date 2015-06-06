@@ -1,11 +1,11 @@
 /**
  * grunt-json-mapreduce is a Grunt plugin for performing custom functions on JSON files
  *
- * @see https://github.com/tkoomzaaskz/grunt-json-mapreduce
+ * @see https://github.com/ducin/grunt-json-mapreduce
  *
- * @author Tomasz Ducin <tomasz.ducin@gmail.com> (https://github.com/tkoomzaaskz)
+ * @author Tomasz Ducin <tomasz.ducin@gmail.com> (https://github.com/ducin)
  * @copyright © 2015 Tomasz Ducin
- * @license MIT https://raw.github.com/tkoomzaaskz/grunt-json-mapreduce/blob/master/LICENSE
+ * @license MIT https://raw.github.com/ducin/grunt-json-mapreduce/blob/master/LICENSE
  */
 
 'use strict';

@@ -1,6 +1,6 @@
 /*
  * grunt-json-mapreduce
- * https://github.com/tkoomzaaskz/grunt-json-mapreduce
+ * https://github.com/ducin/grunt-json-mapreduce
  *
  * Copyright (c) 2015 Tomasz Ducin
  * Licensed under the MIT license.
